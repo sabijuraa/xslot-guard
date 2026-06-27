@@ -1,0 +1,17 @@
+[
+  {"slot": 100, "signature": "honest1", "price": 152.30, "is_attack": false},
+  {"slot": 103, "signature": "honest2", "price": 152.45, "is_attack": false},
+  {"slot": 107, "signature": "honest3", "price": 152.10, "is_attack": false},
+  {"slot": 112, "signature": "honest4", "price": 152.55, "is_attack": false},
+  {"slot": 118, "signature": "honest5", "price": 152.40, "is_attack": false},
+  {"slot": 125, "signature": "honest6", "price": 152.60, "is_attack": false},
+  {"slot": 131, "signature": "honest7", "price": 152.35, "is_attack": false},
+  {"slot": 138, "signature": "honest8", "price": 152.50, "is_attack": false},
+  {"slot": 145, "signature": "honest9", "price": 152.70, "is_attack": false},
+  {"slot": 152, "signature": "frontrun1", "price": 158.90, "is_attack": true},
+  {"slot": 160, "signature": "honest10", "price": 152.45, "is_attack": false},
+  {"slot": 167, "signature": "honest11", "price": 152.55, "is_attack": false},
+  {"slot": 174, "signature": "frontrun2", "price": 161.20, "is_attack": true},
+  {"slot": 181, "signature": "honest12", "price": 152.60, "is_attack": false},
+  {"slot": 188, "signature": "honest13", "price": 152.40, "is_attack": false}
+]
