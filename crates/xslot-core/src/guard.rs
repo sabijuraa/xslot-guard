@@ -164,16 +164,27 @@ mod tests {
     #[test]
     fn config_rejects_bad_tolerance() {
         assert_eq!(
-            GuardConfig { tolerance_bps: 0, min_observations: 2 }.validate(),
+            GuardConfig {
+                tolerance_bps: 0,
+                min_observations: 2
+            }
+            .validate(),
             Err(GuardError::InvalidTolerance)
         );
         assert_eq!(
-            GuardConfig { tolerance_bps: 10_000, min_observations: 2 }.validate(),
+            GuardConfig {
+                tolerance_bps: 10_000,
+                min_observations: 2
+            }
+            .validate(),
             Err(GuardError::InvalidTolerance)
         );
-        assert!(GuardConfig { tolerance_bps: 100, min_observations: 2 }
-            .validate()
-            .is_ok());
+        assert!(GuardConfig {
+            tolerance_bps: 100,
+            min_observations: 2
+        }
+        .validate()
+        .is_ok());
     }
 
     #[test]
@@ -250,8 +261,6 @@ mod tests {
             guard.require_within_tolerance(&oracle, px(120), 21),
             Err(GuardError::DeviationExceeded)
         );
-        assert!(guard
-            .require_within_tolerance(&oracle, px(100), 21)
-            .is_ok());
+        assert!(guard.require_within_tolerance(&oracle, px(100), 21).is_ok());
     }
 }

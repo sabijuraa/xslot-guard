@@ -116,8 +116,7 @@ fn main() -> Result<()> {
             replay(&events, config)?
         }
         Command::Replay { path } => {
-            let data = std::fs::read_to_string(path)
-                .with_context(|| format!("reading {path}"))?;
+            let data = std::fs::read_to_string(path).with_context(|| format!("reading {path}"))?;
             let events: Vec<SwapEvent> =
                 serde_json::from_str(&data).context("parsing swap JSON")?;
             replay(&events, config)?
@@ -182,7 +181,10 @@ fn print_report(report: &AnalysisReport, config: &GuardConfig) {
         println!("  false positives     : {}", score.false_positives);
         println!("  false negatives     : {}", score.false_negatives);
         println!("  true negatives      : {}", score.true_negatives);
-        println!("  detection rate      : {:.2}%", 100.0 * score.detection_rate());
+        println!(
+            "  detection rate      : {:.2}%",
+            100.0 * score.detection_rate()
+        );
         println!("  precision           : {:.2}%", 100.0 * score.precision());
         println!(
             "  false positive rate : {:.2}%",

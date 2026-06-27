@@ -39,8 +39,8 @@ fn to_fixed(price: f64) -> Result<FixedPrice> {
 /// Step 3 mirrors on-chain reality: after a swap executes, the pool's price is
 /// updated, and the next swap sees that price in history.
 pub fn replay(events: &[SwapEvent], config: GuardConfig) -> Result<AnalysisReport> {
-    let guard = CrossSlotGuard::new(config)
-        .map_err(|e| anyhow::anyhow!("invalid guard config: {e:?}"))?;
+    let guard =
+        CrossSlotGuard::new(config).map_err(|e| anyhow::anyhow!("invalid guard config: {e:?}"))?;
     let mut oracle = SlotTwapOracle::new(config.min_observations);
 
     let mut report = AnalysisReport {
