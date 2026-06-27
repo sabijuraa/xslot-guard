@@ -1,0 +1,20 @@
+[package]
+name = "xslot-cli"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Off-chain analysis CLI for xslot-guard: replays real Solana swap history through the cross-slot guard and reports detection rate and compute-unit overhead."
+
+[[bin]]
+name = "xslot-cli"
+path = "src/main.rs"
+
+[dependencies]
+xslot-core = { path = "../xslot-core", features = ["std"] }
+anyhow = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+clap = { version = "=4.4.18", features = ["derive", "env"] }
+ureq = { version = "=2.9.7", default-features = false, features = ["json", "tls"] }
