@@ -1,0 +1,17 @@
+[package]
+name = "xslot-core"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Cross-slot MEV detection core: slot-indexed TWAP oracle and price-deviation guard. no_std compatible for on-chain use."
+
+[dependencies]
+thiserror = { workspace = true, optional = true }
+
+[features]
+default = ["std"]
+std = ["dep:thiserror"]
+
+[dev-dependencies]
